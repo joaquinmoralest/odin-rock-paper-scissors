@@ -4,10 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Rock - Paper - Scissors</title>
+  <title>Rock Paper Scissors</title>
 </head>
 <body>
-  
+  <header>
+    <div class="container">
+      <h1>Rock Paper Scissors</h1>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <h2>Choose your weapon</h2>
+      <article class="option-list">
+        <button id="rock" class="option">✊</button>
+        <button id="paper" class="option">✋</button>
+        <button id="scissors" class="option">✌️</button>
+      </article>
+      <article class="scores">
+        <h2>Score:</h2>
+        <div class="players">
+          <div class="player-score">
+            <span id="player-score" class="score">0</span>
+            <p>Player</p>
+          </div>
+          <div class="computer-score">
+            <span id="computer-score" class="score">0</span>
+            <p>Computer</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+  <footer>
+    <p>Hecho con ❤️ por <a href="https://www.joacodev.com">JoacoDev</a></p>
+  </footer>
+
   <script src="./index.js"></script>
 </body>
 </html>
