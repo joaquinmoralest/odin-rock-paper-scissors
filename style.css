@@ -36,6 +36,18 @@ button {
   background-color: #d7fd97;
 }
 
+button:hover {
+  transform: scale(1.15);
+  transition: .15s ease-in-out;
+  cursor: pointer;
+}
+
+.option-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
 .players {
   display: flex;
   justify-content: center;
