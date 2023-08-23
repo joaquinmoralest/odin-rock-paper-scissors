@@ -9,25 +9,24 @@ let playerScore = 0
 let computerScore = 0
 let playerSelection = ''
 let computerSelection = ''
-let attemps = 0
 
 rock.addEventListener('click', () => {
   playerSelection = 'rock'
   computerSelection = getComputerChoice()
 
-  message.innerText = playRound(playerSelection, computerSelection)
+  game()
 })
 paper.addEventListener('click', () => {
   playerSelection = 'rock'
   computerSelection = getComputerChoice()
 
-  message.innerText = playRound(playerSelection, computerSelection)
+  game()
 })
 scissors.addEventListener('click', () => {
   playerSelection = 'rock'
   computerSelection = getComputerChoice()
 
-  message.innerText = playRound(playerSelection, computerSelection)
+  game()
 })
 
 function getComputerChoice() {
@@ -39,36 +38,45 @@ function playRound(playerSelection, computerSelection) {
     return 'TIE!'
   } else if (playerSelection === 'rock' && computerSelection === 'paper') {
 
-    computerScoreView.innerHTML++
+    computerScore++
+    computerScoreView.innerHTML = computerScore
 
     return "You Lose! Paper beats Rock"
   } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
 
-    computerScoreView.innerHTML++
+    computerScore++
+    computerScoreView.innerHTML = computerScore
 
     return "You Lose! Rock beats Scissors"
   } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
 
-    computerScoreView.innerHTML++
+    computerScore++
+    computerScoreView.innerHTML = computerScore
 
     return "You Lose! Scissors beats Paper"
   } else {
-    playerScoreView.innerHTML++
+    playerScore++
+    playerScoreView.innerHTML = playerScore
 
     return "You win!"
   }
 }
 
 function game() {
-  let result = ''
+  message.innerText = playRound(playerSelection, computerSelection)
 
-  for (let i = 1; i <= 5; i++) {
-    const computerSelection = getComputerChoice()
-    result = playRound(playerSelection, computerSelection)
-
-    console.log(`You choose ${playerSelection}, computer choose ${computerSelection}\n${result}`)
+  if (playerScore === 5) {
+    message.innerText = '¡Congratulations! You win the game🏆'
+    playerScore = 0
+    computerScore = 0
+    playerScoreView.innerText = playerScore
+    computerScoreView.innerText = computerScore
+  } else if (computerScore === 5) {
+    message.innerText = 'Game Over\nbetter luck the next time☠️'
+    playerScore = 0
+    computerScore = 0
+    playerScoreView.innerText = playerScore
+    computerScoreView.innerText = computerScore
   }
-
-  console.log(`Finish!\nResults:\n${playerScore}\n${computerScore}`)
 }
 
