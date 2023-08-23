@@ -75,3 +75,9 @@ footer {
   width: 100%;
   text-align: center;
 }
+
+@media (max-width: 480px) {
+  html, body {
+    font-size: 12px;
+  }
+}
